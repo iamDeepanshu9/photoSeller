@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "photoSellerClient": {
+    "imagePuzzle": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/photo-seller-client",
+            "outputPath": "dist/image-puzzle",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -64,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "photoSellerClient:build:production"
+              "browserTarget": "imagePuzzle:build:production"
             },
             "development": {
-              "browserTarget": "photoSellerClient:build:development"
+              "browserTarget": "imagePuzzle:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "photoSellerClient:build"
+            "browserTarget": "imagePuzzle:build"
           }
         },
         "test": {
@@ -94,8 +95,18 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b9f4975d-40ba-46cf-a389-0f4ae3316519"
   }
 }

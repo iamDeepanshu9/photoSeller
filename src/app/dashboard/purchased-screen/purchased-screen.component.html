@@ -1,0 +1,18 @@
+
+<div mat-tab-nav-bar style="margin-top: 5px;">
+  <mat-tab-group (selectedTabChange)="tabHandler($event)" selectedIndex="1">
+    <mat-tab label="Uploaded"></mat-tab>
+    <mat-tab label="Purchased"></mat-tab>
+  </mat-tab-group>
+</div>
+
+<div class="photo-grid">
+  <app-photo-card
+    *ngFor="let photo of photos; let i = index"
+    [photoDescription]="photo.description"
+    [landmarkName]="photo.landmark"
+    [photoCount]="i"
+    [link]="i+1"
+    type="Purchased"
+  ></app-photo-card>
+</div>

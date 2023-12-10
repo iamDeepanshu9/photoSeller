@@ -1,0 +1,60 @@
+/* add-photo-dialog.component.css */
+
+/* Full-width style for form fields */
+.full-width {
+  width: 100%;
+}
+
+/* Container for the checkbox and its label */
+.mat-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px; /* Add space between checkbox and the next input */
+}
+
+/* Style for the buttons in the footer */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Style for the Upload button */
+.mat-button[color="primary"] {
+  background-color: #2196f3; /* Primary color */
+  color: white;
+}
+
+/* Add some padding and border radius to the buttons */
+.mat-button {
+  margin-left: 8px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+/* Style for the file input field */
+input[type="file"] {
+  display: none; /* Hide the default file input */
+}
+
+/* Style for the custom file input button */
+.mat-form-field-wrapper {
+  position: relative;
+}
+
+.mat-form-field-wrapper::after {
+  content: 'Browse'; /* Change this text as needed */
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px 16px;
+  background-color: #2196f3; /* Primary color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add hover effect for the file input button */
+.mat-form-field-wrapper:hover::after {
+  background-color: #1565c0; /* Darker shade for hover effect */
+}

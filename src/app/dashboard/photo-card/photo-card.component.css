@@ -1,0 +1,34 @@
+.photo-card {
+  width: 300px; /* Adjust the card width as needed */
+  margin: 16px; /* Adjust the margin as needed */
+  border-radius: 4%;
+}
+
+.eclipse{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.description{
+  max-width: 200px;
+}
+
+.topRight{
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  color: #2196f3;
+  border-radius: 50%;
+  width: 40px; /* Adjust the width as needed for the size of the circle */
+  height: 40px; /* Adjust the height as needed for the size of the circle */
+  min-width: 0;
+}
+.topRight mat-icon {
+  margin: -8px;
+}
+
+.purchaseButton{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}

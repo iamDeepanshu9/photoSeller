@@ -1,0 +1,10 @@
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin:0 auto;
+  /*justify-content: space-around;*/
+  padding: 16px; /* Adjust padding as needed */
+  max-height: 80vh; /* Set maximum height to the viewport height */
+  overflow-y: auto;
+}

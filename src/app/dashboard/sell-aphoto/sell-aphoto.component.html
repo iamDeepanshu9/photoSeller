@@ -1,0 +1,55 @@
+<!-- add-photo-dialog.component.html -->
+
+<h1 mat-dialog-title>Add New Photo</h1>
+
+<mat-dialog-content>
+<div [formGroup]="formGroup">
+  <!-- Photo Name Input -->
+  <mat-form-field class="full-width">
+    <mat-label>Photo Name</mat-label>
+    <input matInput formControlName="PhotoName" required>
+  </mat-form-field>
+
+  <!-- Photo Description Input -->
+  <mat-form-field class="full-width">
+    <mat-label>Photo Description</mat-label>
+    <input matInput formControlName="Descriptions" required>
+  </mat-form-field>
+
+  <!-- Is Existing Landmark Checkbox -->
+  <mat-checkbox formControlName="isExistingLandmark">Existing Landmark</mat-checkbox>
+
+  <!-- Landmark Dropdown (displayed if Is Existing Landmark is checked) -->
+  <mat-form-field class="full-width" *ngIf="(isExistingLandmark$$ | async) === true">
+    <mat-label>Landmark</mat-label>
+    <mat-select formControlName="LandmarkId">
+      <!-- Replace this with your actual list of landmarks -->
+      <mat-option *ngFor="let landmark of landmarks" [value]="landmark">{{ landmark }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Landmark Input Field (displayed if Is Existing Landmark is unchecked) -->
+  <mat-form-field class="full-width"  *ngIf="(isExistingLandmark$$ | async) === false">
+    <mat-label>New Landmark</mat-label>
+    <input matInput formControlName="LandMarkName">
+  </mat-form-field>
+
+  <div class="full-width" style="display: flex; align-items: center; justify-content: space-between; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+    <h2 style="margin: 0;">Image Upload</h2>
+    <label style="border: 1px solid #3498db; border-radius: 5px; padding: 10px; cursor: pointer; display: flex; align-items: center;">
+      <input type="file" accept="image/*" capture="environment" [id]="'consignment_note'" class="hidden" (change)="onFileSelected($event)" />
+      <span style="margin-left: 10px;">Select File</span>
+    </label>
+  </div>
+
+</div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button color="primary" (click)="upload()">
+    <div class="flex justify-center">
+      <ng-container>Upload</ng-container>
+<!--      <mat-spinner *ngIf="submitting$$ | async" [diameter]="22" class="m-1"></mat-spinner>-->
+    </div>
+  </button>
+</mat-dialog-actions>

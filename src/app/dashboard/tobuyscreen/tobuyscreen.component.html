@@ -1,0 +1,14 @@
+<app-header></app-header>
+<h1 class="title">Photo Store</h1>
+<div class="container">
+<div class="photo-grid">
+  <app-photo-card
+    *ngFor="let photo of photos; let i = index"
+    [photoDescription]="photo.description"
+    [landmarkName]="photo.landmark"
+    [photoCount]="i"
+    [link]="i+1"
+    type="ToBuy"
+  ></app-photo-card>
+</div>
+</div>
