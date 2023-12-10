@@ -22,7 +22,8 @@
 .loginContainer {
   position: relative;
   min-height: 100vh;
-  background-color: #E1E8EE;
+  background: rgb(64,81,181);
+  background: linear-gradient(36deg, rgba(64,81,181,1) 0%, rgba(253,187,45,1) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
